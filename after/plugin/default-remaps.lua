@@ -1,5 +1,5 @@
 ---------------
--- VIM commands 
+-- VIM commands
 ---------------
 
 -- Control+W followed by W to toggle between open windows and, (+ j, k, h, l)
@@ -30,7 +30,7 @@ vim.keymap.set('c', 'kj', '<esc>')
 vim.keymap.set('c', 'kj', '<esc>')
 
 -- ------------------------
--- Prevent Signcolumn shift 
+-- Prevent Signcolumn shift
 -- ------------------------
 
 vim.o.signcolumn = "yes"
