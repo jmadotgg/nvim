@@ -14,6 +14,7 @@
 -- gt and gT cicle through neovim tabs
 -- number-gt jump to tab position
 -- :cd dir -> set working directory so that files are found
+-- :%!jq -> aktuellen buffer mit jq formatieren
 
 ---------------
 -- Line numbers
