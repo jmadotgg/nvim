@@ -1,7 +1,22 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+lspconfig.wgsl_analyzer.setup {}
 lspconfig.pyright.setup {}
+
+-- html
+local html_capabilities = vim.lsp.protocol.make_client_capabilities()
+html_capabilities.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.html.setup {
+	capabilities = html_capabilities,
+	filetypes = { "html", "templ", "htmldjango" }
+}
+
+-- tailwindcss
+lspconfig.tailwindcss.setup {}
 lspconfig.tsserver.setup {}
+lspconfig.htmx.setup {
+	filetypes = { "html", "templ", "htmldjango" }
+}
 lspconfig.lua_ls.setup {
 	settings = {
 		Lua = {
@@ -30,6 +45,8 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
+--
+local conform_formatter = require("conform")
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 	callback = function(ev)
@@ -54,7 +71,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 		vim.keymap.set('n', '<space>f', function()
-			vim.lsp.buf.format { async = true }
+			conform_formatter.format({ async = true})
+			--vim.lsp.buf.format { async = true }
 		end, opts)
 	end,
 })
