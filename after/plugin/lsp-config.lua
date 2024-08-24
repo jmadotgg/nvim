@@ -10,6 +10,10 @@ lspconfig.html.setup {
 	capabilities = html_capabilities,
 	filetypes = { "html", "templ", "htmldjango" }
 }
+-- css
+lspconfig.cssls.setup {
+	capabilities = html_capabilities
+}
 
 -- tailwindcss
 lspconfig.tailwindcss.setup {}

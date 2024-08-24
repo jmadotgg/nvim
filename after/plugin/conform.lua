@@ -7,6 +7,8 @@ require("conform").setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
 		-- Conform will run the first available formatter
 		html = { "prettierd" },
+		css = { "prettierd" },
+		scss = { "prettierd" },
 		htmldjango = { "prettierd" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		typescript = { "prettierd", "prettier", stop_after_first = true },
