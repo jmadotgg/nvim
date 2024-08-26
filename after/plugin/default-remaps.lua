@@ -16,6 +16,14 @@
 -- :cd dir -> set working directory so that files are found
 -- :%!jq -> aktuellen buffer mit jq formatieren
 
+---------
+-- Macros
+---------
+-- qa -> record macro in register a
+-- q  -> stop recording
+-- @a -> apply macro in register a
+-- @@ -> apply last applied macro
+
 ---------------
 -- Line numbers
 ---------------
@@ -41,3 +49,14 @@ vim.keymap.set('c', 'kj', '<esc>')
 -- ------------------------
 
 vim.o.signcolumn = "yes"
+
+-- ------------------------
+-- Yank to system clipboard
+-- ------------------------
+vim.opt.clipboard = "unnamedplus"
+
+-- -----------
+-- Tab indents
+-- -----------
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
