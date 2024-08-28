@@ -2,7 +2,9 @@
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
-lspconfig.html.setup {}
+lspconfig.html.setup {
+	filetype = { "html", "templ", "pt" }
+}
 lspconfig.lua_ls.setup {
 	settings = {
 		Lua = {
