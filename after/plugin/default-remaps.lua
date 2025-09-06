@@ -35,6 +35,11 @@ vim.keymap.set('i', 'kj', '<esc>')
 vim.keymap.set('c', 'kj', '<esc>')
 vim.keymap.set('c', 'kj', '<esc>')
 
+-- ------------------
+-- Normal mode remaps
+-- ------------------
+vim.keymap.set('n', '<leader>d', ':e %:h<CR>')
+
 -- ------------------------
 -- Prevent Signcolumn shift
 -- ------------------------

@@ -19,7 +19,7 @@ lspconfig.cssls.setup({
 lspconfig.tailwindcss.setup({})
 
 -- ts
-lspconfig.tsserver.setup({})
+-- lspconfig.tsserver.setup({})
 
 -- htmx
 lspconfig.htmx.setup({
@@ -40,12 +40,12 @@ lspconfig.lua_ls.setup({
 })
 
 -- rust
-lspconfig.rust_analyzer.setup({
-	-- Server-specific settings. See `:help lspconfig-setup`
-	settings = {
-		["rust-analyzer"] = {},
-	},
-})
+--lspconfig.rust_analyzer.setup({
+--	-- Server-specific settings. See `:help lspconfig-setup`
+--	settings = {
+--		["rust-analyzer"] = {},
+--	},
+--})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -81,8 +81,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-		vim.keymap.set("n", "<space>f", function()
-			conform_formatter.format({ async = true })
+		vim.keymap.set("n", "<space>f", function(args)
+			conform_formatter.format({  async = true })
 			--vim.lsp.buf.format { async = true }
 		end, opts)
 	end,
