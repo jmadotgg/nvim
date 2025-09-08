@@ -1,10 +1,23 @@
+local capabilitites = vim.lsp.protocol.make_client_capabilities()
+capabilitites.textDocument.completion.completionItem.snippetSupport = true
+capabilitites.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    "documentation",
+    "detail",
+    "additionalTextEdits",
+  },
+}
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
-lspconfig.html.setup {
-	filetype = { "html", "templ", "pt" }
+lspconfig.cssls.setup {
+	capabilitites = capabilitites
 }
+lspconfig.html.setup {
+	filetype = { "htmldjango", "html", "templ", "pt" }
+}
+lspconfig.lemminx.setup {}
 lspconfig.lua_ls.setup {
 	settings = {
 		Lua = {

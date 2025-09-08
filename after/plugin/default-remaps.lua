@@ -15,6 +15,7 @@
 -- number-gt jump to tab position
 -- :cd dir -> set working directory so that files are found
 -- :%!jq -> aktuellen buffer mit jq formatieren
+-- :cdo %s/<search>/replace/cg in quick fix list -> replace search term in quick fix list followed by :cdo w to save
 
 ---------
 -- Macros
@@ -36,6 +37,15 @@ vim.opt.number = true
 ---------------------
 
 vim.keymap.set('i', 'kj', '<esc>')
+
+---------------------
+-- Normal mode remaps
+---------------------
+
+-- Open oil in cur directory
+vim.keymap.set('n', '<leader>d', ':e%:h<enter>')
+-- jq format current file 
+vim.keymap.set('n', '<leader>jq', ':%!jq<enter>')
 
 -- ------------------
 -- Command mode remaps
