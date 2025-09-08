@@ -10,6 +10,7 @@ capabilitites.textDocument.completion.completionItem.resolveSupport = {
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
+lspconfig.ts_ls.setup {}
 lspconfig.cssls.setup {
 	capabilitites = capabilitites
 }
